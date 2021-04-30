@@ -1,0 +1,20 @@
+#1- Generate xml
+
+dotnet test --collect:"XPlat Code Coverage"
+
+
+#2- Install ReportGenerator
+dotnet tool install -g dotnet-reportgenerator-globaltool
+
+#3- Generate reports
+
+reportgenerator
+"-reports:C:\_Github\CodeCoverage\CodeCoverage.Test\TestResults\cd586dcd-cd65-4aab-a39a-0b585c52a40d\coverage.cobertura.xml" 
+"-targetdir:CodeCoverageReports" 
+"-reporttypes:Html"
+
+
+
+References:
+https://github.com/coverlet-coverage/coverlet
+https://danielpalme.github.io/ReportGenerator/
